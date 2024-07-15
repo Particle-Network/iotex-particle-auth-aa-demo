@@ -17,7 +17,7 @@ This app allows you to log in using social logins and interact with the Ethereum
 
 It also showcases how to sign simple messages.
 
-> The Next application is within the `particle-auth-aa` directory.
+> The Next application is within the `particle-auth-aa-iotex` directory.
 
 > 🛠️ Try the demo: [Particle Auth Next.js AA demo](https://iotex-particle-auth-aa-demo.vercel.app/)
 
