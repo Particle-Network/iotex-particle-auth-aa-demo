@@ -2,7 +2,7 @@ import Image from "next/image";
 
 // Link to repository
 const repositoryLink = {
-  href: "https://github.com/soos3d/particle-next-starter",
+  href: "https://github.com/soos3d/iotex-particle-auth-aa-demo",
   imgSrc: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
   imgAlt: "GitHub Logo",
   text: "Check the repository",

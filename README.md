@@ -19,7 +19,7 @@ It also showcases how to sign simple messages.
 
 > The Next application is within the `particle-auth-aa` directory.
 
-> 🛠️ Try the demo: [Particle Auth Next.js AA demo](https://particle-auth-nextjs-aa.vercel.app/)
+> 🛠️ Try the demo: [Particle Auth Next.js AA demo](https://iotex-particle-auth-aa-demo.vercel.app/)
 
 Built using:
 
@@ -35,8 +35,6 @@ Built using:
 ## What is IoTex
 
 [IoTeX](https://iotex.io/) is a blockchain-based platform that provides full compatibility with Ethereum and other major EVM chains through its decentralized bridge. With W3bstream, IoTeX enables dApps to perform verifiable processing using zero-knowledge proofs, effectively connecting off-chain data sources with blockchain applications.
-
-Feel free to adjust as needed!
 
 ## 🔑 Particle Auth Core
 
@@ -60,7 +58,7 @@ Particle Network natively supports and facilitates the end-to-end utilization of
 
 ### Clone this repository
 ```
-git clone https://github.com/soos3d/particle-auth-nextjs-aa
+git clone https://github.com/soos3d/iotex-particle-auth-aa-demo.git
 ```
 
 ### Move into the app directory
