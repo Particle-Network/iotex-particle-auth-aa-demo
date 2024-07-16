@@ -1,6 +1,4 @@
-"use client";
 import React, { useState, useEffect } from "react";
-import type { NextPage } from "next";
 
 // Import Particle Auth hooks and provider
 import {
@@ -26,7 +24,7 @@ import TxNotification from "./components/TxNotification";
 // Import the utility functions
 import { formatBalance, truncateAddress } from "./utils/utils";
 
-const Home: NextPage = () => {
+const Home = () => {
   // Hooks to manage logins, data display, and transactions
   const { connect, disconnect, connectionStatus } = useConnect();
   const { provider, chainInfo } = useEthereum();
@@ -45,9 +43,9 @@ const Home: NextPage = () => {
 
   // Set up and configure the smart account
   const smartAccount = new SmartAccount(provider, {
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-    clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY!,
-    appId: process.env.NEXT_PUBLIC_APP_ID!,
+    projectId: process.env.REACT_APP_PROJECT_ID!,
+    clientKey: process.env.REACT_APP_CLIENT_KEY!,
+    appId: process.env.REACT_APP_APP_ID!,
     aaOptions: {
       accountContracts: {
         SIMPLE: [
@@ -59,9 +57,6 @@ const Home: NextPage = () => {
       },
     },
   });
-
-  // Use this syntax to upadate the smartAccount if you define more that one smart account provider in accountContracts
-  //smartAccount.setSmartAccountContract({ name: "SIMPLE", version: "1.0.0" });
 
   // Function to create ethers provider based on selected mode. This is for ethers V6
   // use new ethers.providers.Web3Provider(new AAWrapProvider(smartAccount, mode), "any"); for Ethers V5
@@ -95,7 +90,7 @@ const Home: NextPage = () => {
       // Get the smart account address
       const address = await smartAccount.getAddress();
       const balanceResponse = await ethersProvider.getBalance(address);
-      const balanceInEther = ethers.formatEther(balanceResponse); // ethers V5 will need the utils module for those convertion operations
+      const balanceInEther = ethers.formatEther(balanceResponse); // ethers V5 will need the utils module for those conversion operations
 
       // Format the balance using the utility function
       const fixedBalance = formatBalance(balanceInEther);
