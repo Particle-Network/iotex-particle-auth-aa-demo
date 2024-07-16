@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   const headContent = {
     title: "Particle Auth Core + IoTeX Demo",
     metaDescription:
-      "Particle Auth with Account Abstraction Code demo in Next js for the IoTeX chain.",
+      "Particle Auth with Account Abstraction Code demo in Next JS for the IoTeX chain.",
     favicon: "/favicon.ico",
   };
 

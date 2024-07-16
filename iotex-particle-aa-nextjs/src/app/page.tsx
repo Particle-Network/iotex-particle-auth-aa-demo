@@ -60,9 +60,11 @@ const Home: NextPage = () => {
     },
   });
 
-  smartAccount.setSmartAccountContract({ name: "SIMPLE", version: "1.0.0" });
+  // Use this syntax to upadate the smartAccount if you define more that one smart account provider in accountContracts
+  //smartAccount.setSmartAccountContract({ name: "SIMPLE", version: "1.0.0" });
 
-  // Function to create ethers provider based on selected mode
+  // Function to create ethers provider based on selected mode. This is for ethers V6
+  // use new ethers.providers.Web3Provider(new AAWrapProvider(smartAccount, mode), "any"); for Ethers V5
   const createEthersProvider = (mode: SendTransactionMode) => {
     return new ethers.BrowserProvider(
       new AAWrapProvider(smartAccount, mode) as Eip1193Provider,
@@ -93,7 +95,7 @@ const Home: NextPage = () => {
       // Get the smart account address
       const address = await smartAccount.getAddress();
       const balanceResponse = await ethersProvider.getBalance(address);
-      const balanceInEther = ethers.formatEther(balanceResponse);
+      const balanceInEther = ethers.formatEther(balanceResponse); // ethers V5 will need the utils module for those convertion operations
 
       // Format the balance using the utility function
       const fixedBalance = formatBalance(balanceInEther);
@@ -129,7 +131,7 @@ const Home: NextPage = () => {
     const tx = {
       to: recipientAddress,
       value: ethers.parseEther("0.01"),
-      data: "0x",
+      data: "0x", // data is needed only when interacting with smart contracts. 0x equals to zero and it's here for demonstration only
     };
 
     try {
@@ -242,6 +244,7 @@ const Home: NextPage = () => {
                 >
                   {isSending ? "Sending..." : "Send 0.01 ETH"}
                 </button>
+                {/* You can use chainInfo.blockExplorerUrl to always link the correct block explorer dynamically*/}
                 {transactionHash && (
                   <TxNotification
                     hash={transactionHash}

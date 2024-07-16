@@ -17,7 +17,7 @@ const codeText = {
 // Links and descriptions to the particle documentation
 const links = [
   {
-    href: "https://docs.particle.network",
+    href: "https://developers.particle.network",
     title: "Documentation →",
     description: "Find in-depth information about AuthCore features and API.",
   },
@@ -36,6 +36,12 @@ const links = [
     href: "https://particle.network",
     title: "Particle Network →",
     description: "The L1 unifying all chains through Universal Accounts.",
+  },
+  {
+    href: "https://docs.iotex.io/",
+    title: "IoTex Documentation →",
+    description:
+      "The modular infrastructure for DePIN projects to deploy in full or integrate modules into existing frameworks.",
   },
 ];
 
@@ -65,19 +71,31 @@ const LinksGrid = () => {
         </code>
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-        {links.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            className="border border-purple-500 p-6 rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            <h2 className="text-2xl font-semibold mb-2 text-purple-400">
-              {link.title}
-            </h2>
-            <p className="text-gray-300">{link.description}</p>
-          </a>
-        ))}
+        {links.map((link, index) => {
+          const isIoTexLink = link.href === "https://docs.iotex.io/";
+          return (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`border p-6 rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out transform hover:scale-105 ${
+                isIoTexLink ? "border-green-500" : "border-purple-500"
+              }`}
+            >
+              <h2
+                className={`text-2xl font-semibold mb-2 ${
+                  isIoTexLink ? "text-green-400" : "text-purple-400"
+                }`}
+              >
+                {link.title}
+              </h2>
+              <p className="text-gray-300">{link.description}</p>
+            </a>
+          );
+        })}
       </div>
+
       <footer className="w-full flex justify-center items-center py-8">
         <Image src="/dark.png" alt="Particle Logo" width={240} height={24} />
       </footer>
