@@ -174,20 +174,20 @@ You can configure the smart account using the `aaOptions` object in `src/app/pag
 ```ts
   // Set up and configure the smart account
   const smartAccount = new SmartAccount(provider, {
- projectId: process.env.NEXT_PUBLIC_PROJECT_ID || "",
- clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY || "",
- appId: process.env.NEXT_PUBLIC_APP_ID || "",
- aaOptions: {
- accountContracts: {
- SIMPLE: [
- {
- version: "1.0.0", // SIMPLE only allows 1.0.0
- chainIds: [EthereumSepolia.id, BaseSepolia.id],
- },
- ],
- },
- },
- });
+    projectId: process.env.REACT_APP_PROJECT_ID!,
+    clientKey: process.env.REACT_APP_CLIENT_KEY!,
+    appId: process.env.REACT_APP_APP_ID!,
+    aaOptions: {
+      accountContracts: {
+        SIMPLE: [
+          {
+            version: "1.0.0", // SIMPLE only allows 1.0.0
+            chainIds: [IoTeXTestnet.id, IoTeX.id],
+          },
+        ],
+      },
+    },
+  });
 
   // Use this syntax to upadate the smartAccount if you define more that one smart account provider in accountContracts
   //smartAccount.setSmartAccountContract({ name: "SIMPLE", version: "1.0.0" });
