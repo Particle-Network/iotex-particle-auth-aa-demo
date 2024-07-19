@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   };
 
   const subHeading =
-    "Particle Auth + Accoun Abstraction SDK + IoTex Chain demo.";
+    "Particle Auth + Account Abstraction SDK + IoTex Chain demo.";
 
   return (
     <>
