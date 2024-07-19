@@ -2,12 +2,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+const inter = Inter({ subsets: ["latin"] });
+
 // Particle imports
 import { AuthType } from "@particle-network/auth-core";
 import { IoTeX, IoTeXTestnet } from "@particle-network/chains";
 import { AuthCoreContextProvider } from "@particle-network/auth-core-modal";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -32,6 +32,7 @@ export default function RootLayout({
               AuthType.twitter,
               AuthType.github,
               AuthType.discord,
+              AuthType.phone,
             ],
             themeType: "dark",
             fiatCoin: "USD",
