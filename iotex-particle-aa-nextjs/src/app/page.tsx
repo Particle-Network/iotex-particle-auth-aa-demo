@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       accountContracts: {
         SIMPLE: [
           {
-            version: "1.0.0", // SIMPLE only allows 1.0.0
+            version: "2.0.0", // SIMPLE allows 1.0.0 for and 2.0.0
             chainIds: [IoTeXTestnet.id, IoTeX.id],
           },
         ],
