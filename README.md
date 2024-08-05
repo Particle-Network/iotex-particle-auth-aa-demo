@@ -132,7 +132,7 @@ yarn dev
 
 Particle Auth config is in `src/app/layout.tsx`. 
 
-## Development React Native
+## Development React
 
 Particle Auth config is in `src/app/index.tsx`. 
 
